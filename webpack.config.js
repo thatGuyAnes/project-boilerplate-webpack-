@@ -9,7 +9,7 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const IS_DEVELOPMENT = process.env.NODE.ENV === 'dev';
+const DEVELOPMENT = process.env.NODE.ENV === 'dev';
 
 const dir = {
   app: path.join(__dirname, 'app'),
@@ -32,7 +32,7 @@ module.exports = {
     new CleanWebpackPlugin(),
 
     new webpack.DefinePlugin({
-      IS_DEVELOPMENT
+      DEVELOPMENT
     }),
 
     new CopyWebpackPlugin({
